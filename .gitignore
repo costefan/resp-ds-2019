@@ -123,3 +123,5 @@ dmypy.json
 .pyre/
 
 .DS_Store
+models/finalized_model.sav
+interpretability/clean_data.csv
