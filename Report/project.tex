@@ -118,6 +118,19 @@ In their work \textit{Ribeiro et al.}\cite{ribeiro2016model} describes desirable
     \item Representation flexibility - should be able to use a different feature representation as the model being explained. 
 \end{itemize}
 
+\section{Models used}
+\subsection{Credit Scoring}
+A credit score is a numerical expression based on a level analysis of a person's credit files, to represent the creditworthiness of an individual. Traditionally, a credit score was primarily based on credit report information typically sourced from credit bureaus. \\
+\textbf{ Dataset: } Lending Club Dataset \\
+Lending Club is a US peer-to-peer lending company, headquartered in San Francisco, California. Lending Club is the world's largest peer-to-peer lending platform. The company states that \$15.98 billion in loans had been originated through its platform up to 31 December 2015. 
+
+\section{Shap}
+SHAP (SHapley Additive exPlanations) is a unified approach to explain the output of any machine learning model. SHAP connects game theory with local explanations, representing the only possible consistent and locally accurate additive feature attribution method based on expectations. \\
+We will use Python Shap library on two tasks (credit scoring, image classification), to understand It's abilities, advantages and disadvantages.\\
+Shap has model flexibility - this library can work with Tree ensembles, Linear models, and Deep Learning models also. By the time, Shap is one of the most famous libraries, it has good explanation flexibility. There is an ability to look at single observation (or multiple) to understand, which features influenced the result in which way (higher/lower). \\
+\includegraphics[height=2cm]{shap_ex1.png}\\[0.5cm] 
+
+
 \newpage
 \printbibliography
 \end{document}
