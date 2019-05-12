@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University Assignment Title Page 
+% LaTeX Template
+% Version 1.0 (27/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% WikiBooks (http://en.wikibooks.org/wiki/LaTeX/Title_Creation)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+% Instructions for using this template:
+% This title page is capable of being compiled as is. This is not useful for 
+% including it in another document. To do this, you have two options: 
+%
+% 1) Copy/paste everything between \begin{document} and \end{document} 
+% starting at \begin{titlepage} and paste this into another LaTeX file where you 
+% want your title page.
+% OR
+% 2) Remove everything outside the \begin{titlepage} and \end{titlepage} and 
+% move this file to the same directory as the LaTeX file you wish to add it to. 
+% Then add \input{./title_page_1.tex} to your LaTeX file where you want your
+% title page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\title{Title page with logo}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article}
+% \usepackage[english]{babel}
+% \usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{biblatex}
+\bibliography{references.bib}
+% \usepackage[colorinlistoftodos]{todonotes}
+\newtheorem{theorem}{Theorem}
+
+
+\textheight=250truemm \textwidth=160truemm 
+\hoffset=-10truemm \voffset=-30truemm
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+\vspace*{0.5cm}
+\textsc{\LARGE Ukrainian Catholic University}\\[1cm] % Name of your university/college
+\textsc{\Large  Faculty of Applied Sciences}\\[0.5cm] % Major heading such as course name
+\textsc{\large Data Science Master Programme}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\vspace*{1.5cm}
+
+\HRule \\[0.4cm]
+{ \huge \bfseries ???}\\[10pt]
+{\Large \bfseries Responsible Data Science project report}\\[0.4cm] % Title of your document
+\HRule \\[1cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+\vspace*{2.5cm}
+
+\Large \emph{Authors:}\\
+Konstantyn  \textsc{Ovchynnikov}\\
+Dmitrii \textsc{Glushko}\\
+Yuriy \textsc{Lizak}\\
+Olena \textsc{Shevchenko}\\[1cm] % Your name
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+\vspace*{0.5cm}
+{\large \today}\\[0.5cm] % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[height=5cm]{UCU-Apps.png}\\[0.5cm] % Include a department/university logo - this will require the graphicx package
+ 
+%----------------------------------------------------------------------------------------
+% Fill the rest of the page with whitespace
+
+\end{titlepage}
+\vspace*{0.8cm}
+\section{Introduction}
+Today we are surrounded by applications of Machine learning. It helps us quickly write letters, corrects grammar, recommends movies and products, unlocks our phone. We are getting used to it; some of us do not really care how such algorithms make decisions, others do. Though some applications are harmless, meaning a mistake will not have serious consequences (e.g., a movie recommender system), others might heavily influence our life by making a mistake (e.g., autonomous driving). Generally, we might want to know 'what was predicted?' and 'why the prediction was made.' To answer the second question, the interpretability comes in handy. \\
+According to \textit{Miller}\cite{Miller}: \textbf{Interpretability is the degree to which a human can understand the cause of a decision.}
+Another definition\cite{NIPS2016_6300} is \textbf{Interpretability is the degree to which a human can consistently predict the model’s result.} So the interpretability is a measure of an answer to 'why' question, is it only?  Various teams around the world work on the understanding of model decision making to make black box models more transparent. Different algorithms had been developed and open sourced. In this work, we want to explore the functionality of popular libraries and analyze their interpretability power.
+
+\section{Related work}
+The easiest way to achieve interpretability is to use only a subset of algorithms that create interpretable models. Linear regression, logistic regression, and the decision tree are commonly used interpretable models.\cite{molnar2019}
+Such models are well described in terms of their explanatory power, so we will not pay additional attention to these models. \\
+With the increasing popularity of deep learning, various teams work of mechanisms to achieve model agnostic interpretability\cite{ribeiro2016model}.The team from the University of Washington \textit{Ribeiro et al.}\cite{RibeiroSG16}  presented the local interpretable model-agnostic explanations (LIME) that work with any classifier. 
+
+
+\section{Model-agnostic systems}
+In their work \textit{Ribeiro et al.}\cite{ribeiro2016model} describes desirable properties of model-agnostic explanation systems. Authors point out three such features:
+\begin{itemize}
+    \item Model flexibility -  can work with both linear models and deep networks
+    \item Explanation flexibility - not limited to a certain form of explanation
+    \item Representation flexibility - should be able to use a different feature representation as the model being explained. 
+\end{itemize}
+
+\newpage
+\printbibliography
+\end{document}
