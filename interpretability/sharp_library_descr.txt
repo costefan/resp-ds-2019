@@ -1,0 +1,10 @@
+Advantages:
+ - Library has good interface
+ 	At first, you should create matrix of shap_values for each feature in each observation.
+ 	Then we will use the to create plots.
+ -	You can create Summary plot, which will give you an overview of which features infuenced the model most, also, you can look in which values range infuenced (high/low).
+ - Also there is an ability to look at single observation (or multiple) to understand, which features influenced the result in which way (higher/lower). 
+ - After looking at the big picture, there is an ability to look at the dependence plot for most influential features (for example).
+ - Support of Python sklearn models, xgboost, and tensorflow/keras deep learning.
+Disadvantages:
+ - library is slow (in order to make it faster you should aggregate your results with k-means).
