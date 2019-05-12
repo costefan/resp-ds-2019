@@ -5,7 +5,7 @@ from keras.preprocessing.image import img_to_array
 from keras.models import load_model
 
 class GenderClassifier():
-    MODEL_PATH = "models/gender_classification/gender_classification.model"
+    MODEL_PATH = "gender_classification.model"
     CLASSES = ["man", "woman"]
 
     def __init__(
