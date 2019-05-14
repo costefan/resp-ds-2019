@@ -143,20 +143,15 @@ explainer = shap.KernelExplainer(model.predict_proba, subsample)
 # Extracting shap values matrix
 shap_values = explainer.shap_values(subsample)
 \end{lstlisting}
-Representation flexibility is important part of this research, 
-\textbf{WILL BE ADDED PARAGRAPH}
+Representation flexibility is important part of this research, so we was trying to use all visualization abilities of the library to get better understanding of prediction results and features influence.\\
+First plot was used to get feature influence and which range of values created this influence. At this plot we can see, for example,  how higher number of delinquincies impacted the model.\\
 \\
 \\
-\\
-\\
-\\
-\\
-\\
-\\
+
 \begin{figure}[!htb]
 \centering
 \includegraphics[height=5cm]{shap_ex1.png}\\[0.5cm] 
-\caption{Summary plot by all features in credit scoring task.}
+\caption{Summary plot by all features in credit scoring task. }
 \end{figure}
 
 After looking at big picture, library gives the ability to look at single observation output and features influence.
