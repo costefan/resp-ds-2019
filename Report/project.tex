@@ -68,7 +68,7 @@
 \vspace*{1.5cm}
 
 \HRule \\[0.4cm]
-{ \huge \bfseries Interpretability libraries comparison.}\\[10pt]
+{ \huge \bfseries Interpretability libraries comparison}\\[10pt]
 {\Large \bfseries Responsible Data Science project report}\\[0.4cm] % Title of your document
 \HRule \\[1cm]
  
@@ -111,7 +111,7 @@ Such models are well described in terms of their explanatory power, so we will n
 With the increasing popularity of deep learning, various teams work of mechanisms to achieve model agnostic interpretability\cite{ribeiro2016model}.The team from the University of Washington \textit{Ribeiro et al.}\cite{RibeiroSG16}  presented the local interpretable model-agnostic explanations (LIME) that work with any classifier. 
 
 \section{Problems}
-We want to investigate the interpretability systems based on two different tasks - Credit Scoring and Image Classification. 
+We want to investigate the interpretability systems based on two different tasks - Credit Scoring and Image Classification. Link to the Github project\cite{Project}
 
 \subsection{Credit Scoring}
 A credit score is a numerical expression based on a level analysis of a person's credit files, to represent the creditworthiness of an individual. Traditionally, a credit score was primarily based on credit report information typically sourced from credit bureaus. \\
@@ -126,9 +126,6 @@ In their work \textit{Ribeiro et al.}\cite{ribeiro2016model} describes desirable
     \item Explanation flexibility - not limited to a certain form of explanation
     \item Representation flexibility - should be able to use a different feature representation as the model being explained. 
 \end{itemize}
-
-\subsection{LIME}
-\textbf{HERE SHOULD BE INFO ABOUT LIME: WHEN PRESENTED, BY WHOM, BASIC IDEA, HOW DOES IT WORK}
 
 \subsection{SHAP}
 SHAP (SHapley Additive exPlanations) presented by \textit{Lundberg and Lee} \cite{SHAP} at NIPS 2017 as a unified way to interpret model predictions. 
@@ -177,8 +174,8 @@ Library has ability to build dependence plots. For example we can look at the mo
 \end{figure}
 \newpage
 \subsection{SKATER}
-Skater is an open-source python library for model interpretation. The project started in the beginning of 2017 and is currently under active development in beta phase. \\
-Skater supports interpretation on two levels: global - using information from whole dataset, local - using information about one prediction to approximate functions based on inputs and outputs. Global interpretation is suppoted by next algorithms:
+Skater is an open-source python library for model interpretation. The project started at the beginning of 2017 and is currently under active development in the beta phase. \\
+Skater supports interpretation on two levels: global - using information from the whole dataset, local - using information about one prediction to approximate functions based on inputs and outputs. Global interpretation is supported by the next algorithms:
 \begin{itemize}
     \item Model agnostic Feature Importance
     \item Model agnostic Partial Dependence Plots
@@ -193,17 +190,17 @@ Local interpretation is realized using:
     \item Scalable Bayesian Rule Lists
     \item Tree Surrogates
 \end{itemize}
-Framework supports the most popular python libraries. It can work with models from scikit-learn, XGBoost, keras, tensorflow. \\
-In this project Skater was applied to interpret Gender Classification model based on the VGGNet Architecture. 3 methods were used to explain the model:
+The framework supports the most popular Python libraries. It can work with models from scikit-learn, XGBoost, Keras, Tensorflow. \\
+In this project, Skater was applied to interpret Gender Classification model based on the VGGNet Architecture. 3 methods were used to explain the model:
 \begin{itemize}
     \item Epsilon-LRP
     \item Integrated Gradient
     \item Occlusion
 \end{itemize}
 
-Layer-wise Relevance Propagation is a method that identifies important pixels by running a backward pass in the neural network. It starts from the output and weight the neurons that contributes the most. How to implement it can be found in \cite{LRP_Implementation}. \\
+Layer-wise Relevance Propagation is a method that identifies important pixels by running a backward pass in the neural network. It starts from the output and weight the neurons that contribute the most. How to implement it can be found in \cite{LRP_Implementation}. \\
 
-Integrated Gradients is a method to find the relation between a deep model's prediction and its features. Like in our example relation to the pixels. Method is based on the paper \cite{Integrated_Gradients}. \\
+Integrated Gradients is a method to find the relation between a deep model's prediction and its features. Like in our example it is a relation to the pixels. The method is based on the paper \cite{Integrated_Gradients}. \\
 
 Occlusion as an algorithm that computes direct relevance of the input features by removing or masking them, running a forward pass and measuring the difference between old and new output. Explained in detail by \cite{Occlusion}. \\
 
@@ -218,10 +215,7 @@ Corresponding code of using Skater on VGGNet can be found in \textit{interpretab
 
 
 All three methods are trying to find out the importance of the pixels for the specific prediction.
-Looking at the result with the woman example we can see that current model has strong relation between hair pixels and the prediction. Both Integrated Gradient and Epsilon-LRP show almost the same result. In contrast looking at the occlusion method it is hard to get good interpretation of the model. So using Skater with local intepretation approaches it is easy to add some intepretability to CNN networks even having few examples.
-
-\section{Results}
-\textbf{WE CAN EITHER GROUP THE RESULTS BY TASKS OF BY MODELS}
+Looking at the result with the woman example we can see that the current model has a strong relation between hair pixels and the prediction. Both Integrated Gradient and Epsilon-LRP show almost the same result. In contrast, looking at the occlusion method, it is hard to get a good interpretation of the model. So using Skater with local interpretation approaches it is easy to add some interpretability to CNN networks even having few examples.
 
 \section{Conclusions}
 We've tried several libraries with two different (deep learning, tree) models. Most of them had model flexibility so we can work with both models. 
@@ -230,7 +224,13 @@ Skater has also flexibility in the available functionality. The framework has di
 Summarising the frameworks we analyzed, there are a lot of different algorithms and methods that are already implemented and work nice with existing libraries like sci-kit-learn, Keras, Tensorflow making live of the data scientist easier and giving time to stay focused on the domain part of the problem. But from another point of view, all these techniques are pretty generic so far and can't cover all the possible cases, meaning that the data scientist can always encounter the situation where the specific solution must be applied with using the specific domain knowledge.
 
 \section{Peer Review}
-\textbf{table with peer review}
+Work done:
+\begin{itemize}
+    \item Dmitrii Glushko: Gender Classification model preparation, Skater library analysis and report section
+    \item Konstantyn Ovchynnikov: Credit Scoring model preparation, SHAP library analysis and report section
+    \item Yuriy Lizak: LIME library analysis
+    \item Olena Shevchenko: report skeleton, introduction, related work
+\end{itemize}
 
 \newpage
 \printbibliography
