@@ -191,7 +191,19 @@ Local interpretation is realized using:
     \item Scalable Bayesian Rule Lists
     \item Tree Surrogates
 \end{itemize}
-Framework supports the most popular python libraries. It can work with models from scikit-learn, XGBoost, keras, tensorflow.
+Framework supports the most popular python libraries. It can work with models from scikit-learn, XGBoost, keras, tensorflow. \\
+In this project Skater was applied to interpret Gender Classification model based on the VGGNet Architecture. 3 methods were used to explain the model:
+\begin{itemize}
+    \item Epsilon-LRP
+    \item Integrated Gradient
+    \item Occlusion
+\end{itemize}
+Corresponding code can be found in \textit{interpretability/skater\textunderscore library.ipynb} ipython notebook.
+\begin{figure}[!htb]
+\centering
+\includegraphics[height=7cm]{skater_ex1.png}\\[0.5cm] 
+\caption{Local VGGNet model interpretability}
+\end{figure}
 
 \section{Results}
 \textbf{WE CAN EITHER GROUP THE RESULTS BY TASKS OF BY MODELS}
