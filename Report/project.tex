@@ -36,6 +36,7 @@
 % \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{listings}
 \usepackage{biblatex}
 \bibliography{references.bib}
 % \usepackage[colorinlistoftodos]{todonotes}
@@ -109,6 +110,14 @@ The easiest way to achieve interpretability is to use only a subset of algorithm
 Such models are well described in terms of their explanatory power, so we will not pay additional attention to these models. \\
 With the increasing popularity of deep learning, various teams work of mechanisms to achieve model agnostic interpretability\cite{ribeiro2016model}.The team from the University of Washington \textit{Ribeiro et al.}\cite{RibeiroSG16}  presented the local interpretable model-agnostic explanations (LIME) that work with any classifier. 
 
+\section{Problems}
+We want to investigate the interpretability systems based on two different tasks - Credit Scoring and Image Classification. 
+
+\subsection{Credit Scoring}
+A credit score is a numerical expression based on a level analysis of a person's credit files, to represent the creditworthiness of an individual. Traditionally, a credit score was primarily based on credit report information typically sourced from credit bureaus. \\
+\textbf{About the Dataset:} Lending Club Dataset \textbf{HERE SHOULD BE CITATION}\\
+Lending Club is a US peer-to-peer lending company, headquartered in San Francisco, California. Lending Club is the world's largest peer-to-peer lending platform. The company states that \$15.98 billion in loans had been originated through its platform up to 31 December 2015.
+
 
 \section{Model-agnostic systems}
 In their work \textit{Ribeiro et al.}\cite{ribeiro2016model} describes desirable properties of model-agnostic explanation systems. Authors point out three such features:
@@ -118,18 +127,64 @@ In their work \textit{Ribeiro et al.}\cite{ribeiro2016model} describes desirable
     \item Representation flexibility - should be able to use a different feature representation as the model being explained. 
 \end{itemize}
 
-\section{Models used}
-\subsection{Credit Scoring}
-A credit score is a numerical expression based on a level analysis of a person's credit files, to represent the creditworthiness of an individual. Traditionally, a credit score was primarily based on credit report information typically sourced from credit bureaus. \\
-\textbf{ Dataset: } Lending Club Dataset \\
-Lending Club is a US peer-to-peer lending company, headquartered in San Francisco, California. Lending Club is the world's largest peer-to-peer lending platform. The company states that \$15.98 billion in loans had been originated through its platform up to 31 December 2015. 
+\subsection{LIME}
+\textbf{HERE SHOULD BE INFO ABOUT LIME: WHEN PRESENTED, BY WHOM, BASIC IDEA, HOW DOES IT WORK}
 
-\section{Shap}
-SHAP (SHapley Additive exPlanations) is a unified approach to explain the output of any machine learning model. SHAP connects game theory with local explanations, representing the only possible consistent and locally accurate additive feature attribution method based on expectations. \\
+\subsection{SHAP}
+SHAP (SHapley Additive exPlanations) presented by \textit{Lundberg and Lee} \cite{SHAP} at NIPS 2017 as a unified way to interpret model predictions. 
+SHAP is a unified approach to explain the output of any machine learning model. SHAP connects game theory with local explanations, representing the only possible consistent and locally accurate additive feature attribution method based on expectations. \\
 We will use Python Shap library on two tasks (credit scoring, image classification), to understand It's abilities, advantages and disadvantages.\\
 Shap has model flexibility - this library can work with Tree ensembles, Linear models, and Deep Learning models also. By the time, Shap is one of the most famous libraries, it has good explanation flexibility. There is an ability to look at single observation (or multiple) to understand, which features influenced the result in which way (higher/lower). \\
-\includegraphics[height=2cm]{shap_ex1.png}\\[0.5cm] 
+Shap API is straightforward. \\
+\begin{lstlisting}
+----------------------------------------------------
+# Explainer can work with any Python model
+explainer = shap.KernelExplainer(model.predict_proba, subsample)
+# Extracting shap values matrix
+shap_values = explainer.shap_values(subsample)
+\end{lstlisting}
+Representation flexibility is important part of this research, 
+\textbf{WILL BE ADDED PARAGRAPH}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\begin{figure}[!htb]
+\centering
+\includegraphics[height=5cm]{shap_ex1.png}\\[0.5cm] 
+\caption{Summary plot by all features in credit scoring task.}
+\end{figure}
 
+After looking at big picture, library gives the ability to look at single observation output and features influence.
+\begin{figure}[!htb]
+
+\centering
+\includegraphics[height=2cm]{shap_ex2.png}\\[0.5cm] 
+\caption{Example of single observation explanation.}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[height=5cm]{shap_ex3.png}\\[0.5cm] 
+\caption{Dependence plot for scoring task.}
+\end{figure}
+
+\subsection{SKATER}
+\textbf{HERE SHOULD BE INFO ABOUT SKATER: WHEN PRESENTED, BY WHOM, BASIC IDEA, HOW DOES IT WORK}
+
+\section{Results}
+\textbf{WE CAN EITHER GROUP THE RESULTS BY TASKS OF BY MODELS}
+
+\section{Conclusions}
+\textbf{Here we should make small analysis on how it works}
+
+\section{Peer Review}
+\textbf{table with peer review}
 
 \newpage
 \printbibliography
