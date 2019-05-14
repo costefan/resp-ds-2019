@@ -198,12 +198,25 @@ In this project Skater was applied to interpret Gender Classification model base
     \item Integrated Gradient
     \item Occlusion
 \end{itemize}
-Corresponding code can be found in \textit{interpretability/skater\textunderscore library.ipynb} ipython notebook.
+
+Layer-wise Relevance Propagation is a method that identifies important pixels by running a backward pass in the neural network. It starts from the output and weight the neurons that contributes the most. How to implement it can be found in \cite{LRP_Implementation}. \\
+
+Integrated Gradients is a method to find the relation between a deep model's prediction and its features. Like in our example relation to the pixels. Method is based on the paper \cite{Integrated_Gradients}. \\
+
+Occlusion as an algorithm that computes direct relevance of the input features by removing or masking them, running a forward pass and measuring the difference between old and new output. Explained in detail by \cite{Occlusion}. \\
+
+Corresponding code of using Skater on VGGNet can be found in \textit{interpretability/skater\textunderscore library.ipynb} ipython notebook. \\
+
+
 \begin{figure}[!htb]
 \centering
 \includegraphics[height=7cm]{skater_ex1.png}\\[0.5cm] 
-\caption{Local VGGNet model interpretability}
+\caption{Local VGGNet model interpretability with Skater}
 \end{figure}
+
+
+All three methods are trying to find out the importance of the pixels for the specific prediction.
+Looking at the result with the woman example we can see that current model has strong relation between hair pixels and the prediction. Both Integrated Gradient and Epsilon-LRP show almost the same result. In contrast looking at the occlusion method it is hard to get good interpretation of the model. So using Skater with local intepretation approaches it is easy to add some intepretability to CNN networks even having few examples.
 
 \section{Results}
 \textbf{WE CAN EITHER GROUP THE RESULTS BY TASKS OF BY MODELS}
