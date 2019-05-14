@@ -170,7 +170,23 @@ After looking at big picture, library gives the ability to look at single observ
 \end{figure}
 
 \subsection{SKATER}
-\textbf{HERE SHOULD BE INFO ABOUT SKATER: WHEN PRESENTED, BY WHOM, BASIC IDEA, HOW DOES IT WORK}
+Skater is an open-source python library for model interpretation. The project started in the beginning of 2017 and is currently under active development in beta phase. \\
+Skater supports interpretation on two levels: global - using information from whole dataset, local - using information about one prediction to approximate functions based on inputs and outputs. Global interpretation is suppoted by next algorithms:
+\begin{itemize}
+    \item Model agnostic Feature Importance
+    \item Model agnostic Partial Dependence Plots
+    \item Scalable Bayesian Rule Lists
+    \item Tree Surrogates
+\end{itemize}
+Local interpretation is realized using:
+\begin{itemize}
+    \item Local Interpretable Model Explanation (LIME)
+    \item Layer-wise Relevance Propagation (e-LRP): image
+    \item Integrated Gradient: image and text
+    \item Scalable Bayesian Rule Lists
+    \item Tree Surrogates
+\end{itemize}
+Framework supports the most popular python libraries. It can work with models from scikit-learn, XGBoost, keras, tensorflow.
 
 \section{Results}
 \textbf{WE CAN EITHER GROUP THE RESULTS BY TASKS OF BY MODELS}
