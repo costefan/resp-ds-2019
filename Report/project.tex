@@ -143,20 +143,15 @@ explainer = shap.KernelExplainer(model.predict_proba, subsample)
 # Extracting shap values matrix
 shap_values = explainer.shap_values(subsample)
 \end{lstlisting}
-Representation flexibility is important part of this research, 
-\textbf{WILL BE ADDED PARAGRAPH}
+Representation flexibility is important part of this research, so we was trying to use all visualization abilities of the library to get better understanding of prediction results and features influence.\\
+First plot was used to get feature influence and which range of values created this influence. At this plot we can see, for example,  how higher number of delinquincies impacted the model.\\
 \\
 \\
-\\
-\\
-\\
-\\
-\\
-\\
+
 \begin{figure}[!htb]
 \centering
 \includegraphics[height=5cm]{shap_ex1.png}\\[0.5cm] 
-\caption{Summary plot by all features in credit scoring task.}
+\caption{Summary plot by all features in credit scoring task. }
 \end{figure}
 
 After looking at big picture, library gives the ability to look at single observation output and features influence.
@@ -166,14 +161,21 @@ After looking at big picture, library gives the ability to look at single observ
 \includegraphics[height=2cm]{shap_ex2.png}\\[0.5cm] 
 \caption{Example of single observation explanation.}
 \end{figure}
-
+\\
+Library has ability to build dependence plots. For example we can look at the most influencial features.
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[height=5cm]{shap_ex3.png}\\[0.5cm] 
-\caption{Dependence plot for scoring task.}
+\caption{Example of dependence plot for scoring task.}
 \end{figure}
 
+\begin{figure}[!htb]
+\centering
+\includegraphics[height=5cm]{shap_ex4.png}\\[0.5cm] 
+\caption{Deep learning model feature maps. Explains visually which features was used to make predictions.}
+\end{figure}
+\newpage
 \subsection{SKATER}
 Skater is an open-source python library for model interpretation. The project started in the beginning of 2017 and is currently under active development in beta phase. \\
 Skater supports interpretation on two levels: global - using information from whole dataset, local - using information about one prediction to approximate functions based on inputs and outputs. Global interpretation is suppoted by next algorithms:
@@ -191,28 +193,8 @@ Local interpretation is realized using:
     \item Scalable Bayesian Rule Lists
     \item Tree Surrogates
 \end{itemize}
-Framework supports the most popular python libraries. It can work with models from scikit-learn, XGBoost, keras, tensorflow. \\
-In this project Skater was applied to interpret Gender Classification model based on the VGGNet Architecture. 3 methods were used to explain the model:
-\begin{itemize}
-    \item Epsilon-LRP
-    \item Integrated Gradient
-    \item Occlusion
-\end{itemize}
 
-Layer-wise Relevance Propagation is a method that identifies important pixels by running a backward pass in the neural network. It starts from the output and weight the neurons that contributes the most. How to implement it can be found in \cite{LRP_Implementation}. \\
-
-Integrated Gradients is a method to find the relation between a deep model's prediction and its features. Like in our example relation to the pixels. Method is based on the paper \cite{Integrated_Gradients}. \\
-
-Occlusion as an algorithm that computes direct relevance of the input features by removing or masking them, running a forward pass and measuring the difference between old and new output. Explained in detail by \cite{Occlusion}. \\
-
-Corresponding code of using Skater on VGGNet can be found in \textit{interpretability/skater\textunderscore library.ipynb} ipython notebook. \\
-
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[height=7cm]{skater_ex1.png}\\[0.5cm] 
-\caption{Local VGGNet model interpretability with Skater}
-\end{figure}
+Framework supports the most popular python libraries. It can work with models from scikit-learn, XGBoost, keras, tensorflow.
 
 
 All three methods are trying to find out the importance of the pixels for the specific prediction.
