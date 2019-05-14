@@ -170,6 +170,12 @@ Library has ability to build dependence plots. For example we can look at the mo
 \caption{Example of dependence plot for scoring task.}
 \end{figure}
 
+\begin{figure}[!htb]
+\centering
+\includegraphics[height=5cm]{shap_ex4.png}\\[0.5cm] 
+\caption{Deep learning model feature maps. Explains visually which features was used to make predictions.}
+\end{figure}
+\newpage
 \subsection{SKATER}
 Skater is an open-source python library for model interpretation. The project started in the beginning of 2017 and is currently under active development in beta phase. \\
 Skater supports interpretation on two levels: global - using information from whole dataset, local - using information about one prediction to approximate functions based on inputs and outputs. Global interpretation is suppoted by next algorithms:
@@ -187,19 +193,7 @@ Local interpretation is realized using:
     \item Scalable Bayesian Rule Lists
     \item Tree Surrogates
 \end{itemize}
-Framework supports the most popular python libraries. It can work with models from scikit-learn, XGBoost, keras, tensorflow. \\
-In this project Skater was applied to interpret Gender Classification model based on the VGGNet Architecture. 3 methods were used to explain the model:
-\begin{itemize}
-    \item Epsilon-LRP
-    \item Integrated Gradient
-    \item Occlusion
-\end{itemize}
-Corresponding code can be found in \textit{interpretability/skater\textunderscore library.ipynb} ipython notebook.
-\begin{figure}[!htb]
-\centering
-\includegraphics[height=7cm]{skater_ex1.png}\\[0.5cm] 
-\caption{Local VGGNet model interpretability}
-\end{figure}
+Framework supports the most popular python libraries. It can work with models from scikit-learn, XGBoost, keras, tensorflow.
 
 \section{Results}
 \textbf{WE CAN EITHER GROUP THE RESULTS BY TASKS OF BY MODELS}
