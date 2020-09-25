@@ -3,7 +3,7 @@ pylint == 2.3.1
 keras == 2.2.4
 numpy == 1.16.3
 opencv-python == 4.1.0.25
-tensorflow == 1.13.1
+tensorflow == 1.15.4
 shap == 0.28.5
 skater == 1.1.2
 lime == 0.1.1.33
